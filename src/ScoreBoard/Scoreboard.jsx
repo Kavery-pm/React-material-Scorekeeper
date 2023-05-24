@@ -17,7 +17,8 @@ const Scoreboard = ({ playerNumbers }) => {
       });
     });
   };
-  console.log(new Array(+playerNumbers).fill(0));
+  
+
   return (
     <>
       {scoreBoard.map((item, idx) => (

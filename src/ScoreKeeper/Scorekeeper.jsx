@@ -1,15 +1,19 @@
+/* eslint-disable react/prop-types */
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useRef } from "react";
 import Scoreboard from "../ScoreBoard/Scoreboard";
 import { useState } from "react";
-const ScoreKeeper = () => {
+const ScoreKeeper = (props) => {
 const numberOfPlayers = useRef('')
 const [generateScoreBoard, setgenerateScoreBoard] = useState(false);
 const generatePlayerBoard =()=>{
     console.log(numberOfPlayers.current.value);
     setgenerateScoreBoard(true);
+}
+const resetHandler = ()=>{
+window.location.reload()
 }
   return (
     <Box
@@ -31,10 +35,11 @@ const generatePlayerBoard =()=>{
      
         sx={{ width: "50ch", color: "black",m:'10px',justifyContent:'center' }}
       />
-      <Button variant="contained" onClick={generatePlayerBoard}>Generate Score Board</Button>
+      <Button variant="contained" onClick={generatePlayerBoard} >Generate Score Board</Button>
+      <Button variant="contained" onClick={resetHandler} sx={{marginLeft:'10px'}}>Reset</Button>
       <div>
         {
-            generateScoreBoard &&  <Scoreboard playerNumbers={numberOfPlayers.current.value}/>
+            generateScoreBoard &&  <Scoreboard playerNumbers={numberOfPlayers.current.value} reset={resetHandler}/>
         }
        
       </div>
