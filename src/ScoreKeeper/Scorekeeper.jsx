@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import { useRef } from "react";
 import Scoreboard from "../ScoreBoard/Scoreboard";
 import { useState } from "react";
-const ScoreKeeper = (props) => {
+const ScoreKeeper = () => {
 const numberOfPlayers = useRef('')
 const [generateScoreBoard, setgenerateScoreBoard] = useState(false);
 const generatePlayerBoard =()=>{

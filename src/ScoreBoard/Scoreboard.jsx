@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -9,13 +9,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { blue } from '@mui/material/colors';
 // import { deepOrange} from '@mui/material/colors';
 const Scoreboard = ({ playerNumbers }) => {
   const [open, setOpen] = useState(true);
-  const winningScore = useRef(5);
  const [winScore, setwinScore] = useState(10);
-  console.log(typeof playerNumbers);
+  
   const [scoreBoard, setscoreBoard] = useState(
     new Array(+playerNumbers).fill(0)
   );
